@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://f0iu16m8jlsc"
+path="res://.godot/imported/campfire_bricks.obj-0c98c5e6a9ed525615507988380aac54.mesh"
+
+[deps]
+
+files=["res://.godot/imported/campfire_bricks.obj-0c98c5e6a9ed525615507988380aac54.mesh"]
+
+source_file="res://island/models/campfire_bricks.obj"
+dest_files=["res://.godot/imported/campfire_bricks.obj-0c98c5e6a9ed525615507988380aac54.mesh", "res://.godot/imported/campfire_bricks.obj-0c98c5e6a9ed525615507988380aac54.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

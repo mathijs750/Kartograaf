@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b314us35tnh1f"
+path="res://.godot/imported/tree_cone_dark.obj-cd218f955df570f58531c2364d30e1a2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_cone_dark.obj-cd218f955df570f58531c2364d30e1a2.mesh"]
+
+source_file="res://island/models/tree_cone_dark.obj"
+dest_files=["res://.godot/imported/tree_cone_dark.obj-cd218f955df570f58531c2364d30e1a2.mesh", "res://.godot/imported/tree_cone_dark.obj-cd218f955df570f58531c2364d30e1a2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

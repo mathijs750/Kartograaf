@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bx4ttxhldjn64"
+path="res://.godot/imported/campfire_planks.obj-cb8f890f42c7738a84d8fa89ee3ef19f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/campfire_planks.obj-cb8f890f42c7738a84d8fa89ee3ef19f.mesh"]
+
+source_file="res://island/models/campfire_planks.obj"
+dest_files=["res://.godot/imported/campfire_planks.obj-cb8f890f42c7738a84d8fa89ee3ef19f.mesh", "res://.godot/imported/campfire_planks.obj-cb8f890f42c7738a84d8fa89ee3ef19f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

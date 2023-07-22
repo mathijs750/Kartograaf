@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://iy57ig52a2bh"
+path="res://.godot/imported/tree_simple_fall.obj-2a4149c86090e176f1a03542b106984b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_simple_fall.obj-2a4149c86090e176f1a03542b106984b.mesh"]
+
+source_file="res://island/models/tree_simple_fall.obj"
+dest_files=["res://.godot/imported/tree_simple_fall.obj-2a4149c86090e176f1a03542b106984b.mesh", "res://.godot/imported/tree_simple_fall.obj-2a4149c86090e176f1a03542b106984b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

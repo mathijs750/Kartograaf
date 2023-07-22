@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csr1qn0sonvqi"
+path="res://.godot/imported/ground_riverEndClosed.obj-578fd35bbc9ea28ce63ac181e3b3be65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverEndClosed.obj-578fd35bbc9ea28ce63ac181e3b3be65.mesh"]
+
+source_file="res://island/models/ground_riverEndClosed.obj"
+dest_files=["res://.godot/imported/ground_riverEndClosed.obj-578fd35bbc9ea28ce63ac181e3b3be65.mesh", "res://.godot/imported/ground_riverEndClosed.obj-578fd35bbc9ea28ce63ac181e3b3be65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgoe4qyd4ykcw"
+path="res://.godot/imported/stone_smallI.obj-f4bdc6cc275b7ae09e4864dbfe73f848.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_smallI.obj-f4bdc6cc275b7ae09e4864dbfe73f848.mesh"]
+
+source_file="res://island/models/stone_smallI.obj"
+dest_files=["res://.godot/imported/stone_smallI.obj-f4bdc6cc275b7ae09e4864dbfe73f848.mesh", "res://.godot/imported/stone_smallI.obj-f4bdc6cc275b7ae09e4864dbfe73f848.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

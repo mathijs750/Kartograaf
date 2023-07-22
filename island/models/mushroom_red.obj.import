@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq0uk3p2nsdqn"
+path="res://.godot/imported/mushroom_red.obj-a8358fe3c9943a49d08d8f877e62624b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mushroom_red.obj-a8358fe3c9943a49d08d8f877e62624b.mesh"]
+
+source_file="res://island/models/mushroom_red.obj"
+dest_files=["res://.godot/imported/mushroom_red.obj-a8358fe3c9943a49d08d8f877e62624b.mesh", "res://.godot/imported/mushroom_red.obj-a8358fe3c9943a49d08d8f877e62624b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

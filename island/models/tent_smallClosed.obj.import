@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq4ifp738nk3d"
+path="res://.godot/imported/tent_smallClosed.obj-4c560676eca9109ffb7578861d4ad2d1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tent_smallClosed.obj-4c560676eca9109ffb7578861d4ad2d1.mesh"]
+
+source_file="res://island/models/tent_smallClosed.obj"
+dest_files=["res://.godot/imported/tent_smallClosed.obj-4c560676eca9109ffb7578861d4ad2d1.mesh", "res://.godot/imported/tent_smallClosed.obj-4c560676eca9109ffb7578861d4ad2d1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

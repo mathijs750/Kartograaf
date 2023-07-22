@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://s4nunuqm8tv0"
+path="res://.godot/imported/ground_pathStraight.obj-aa20e05229a808ae479c8904d6d445df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathStraight.obj-aa20e05229a808ae479c8904d6d445df.mesh"]
+
+source_file="res://island/models/ground_pathStraight.obj"
+dest_files=["res://.godot/imported/ground_pathStraight.obj-aa20e05229a808ae479c8904d6d445df.mesh", "res://.godot/imported/ground_pathStraight.obj-aa20e05229a808ae479c8904d6d445df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

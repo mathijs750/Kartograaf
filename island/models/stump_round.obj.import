@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dd2cu8fpqti41"
+path="res://.godot/imported/stump_round.obj-8778fbe18b81ab4247ad8395aff62375.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stump_round.obj-8778fbe18b81ab4247ad8395aff62375.mesh"]
+
+source_file="res://island/models/stump_round.obj"
+dest_files=["res://.godot/imported/stump_round.obj-8778fbe18b81ab4247ad8395aff62375.mesh", "res://.godot/imported/stump_round.obj-8778fbe18b81ab4247ad8395aff62375.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

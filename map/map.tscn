@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://yplhit0jpkeb"]
+
+[ext_resource type="Script" path="res://map/map.gd" id="1_3ajeq"]
+[ext_resource type="Texture2D" uid="uid://80f7jx31eif2" path="res://map/Textures/parchmentFolded.png" id="1_p2nx4"]
+[ext_resource type="Texture2D" uid="uid://8uwnfivnws3a" path="res://map/Textures/parchmentAncient.png" id="2_t82um"]
+[ext_resource type="TileSet" uid="uid://cp7otyxtd8cpt" path="res://map/map_tiles.tres" id="3_jcptp"]
+[ext_resource type="Texture2D" uid="uid://cv0ys7du8q5iv" path="res://world/Schermafbeelding 2023-07-21 234525.png" id="5_dhw2h"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_3ajeq")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(718, 449)
+scale = Vector2(1.41992, 0.898438)
+texture = ExtResource("1_p2nx4")
+
+[node name="BG2" type="Sprite2D" parent="."]
+modulate = Color(0.419608, 0.419608, 0.419608, 0.501961)
+position = Vector2(1815, 450)
+scale = Vector2(1.41992, 0.898438)
+texture = ExtResource("2_t82um")
+
+[node name="BG3" type="Sprite2D" parent="."]
+position = Vector2(1823, 450)
+scale = Vector2(1.41992, 0.898438)
+texture = ExtResource("2_t82um")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_jcptp")
+format = 2
+layer_0/tile_data = PackedInt32Array(786446, 131072, 6, 65554, 0, 2, 131090, 0, 3, 262162, 327680, 3, 262163, 327680, 2, 327698, 327680, 1, 327699, 262144, 1, 393234, 0, 4, 458770, 0, 1, 393235, 131072, 1, 458771, 196608, 0, 524307, 262144, 7, 393216, 196608, 2, 327680, 131072, 6, 65556, 131072, 6, 131092, 589824, 0, 65557, 524288, 0, 262164, 196608, 6, 327700, 196608, 7, 393236, 196608, 8, 262165, 196608, 4, 327701, 196608, 5, 393237, 196608, 6, 458772, 0, 9, 458773, 65536, 9, 524309, 65536, 8)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(81, 402, 94, 339, 133, 316, 130, 230, 139, 170, 176, 111, 212, 81, 250, 43, 273, 24, 317, 15, 411, 29, 454, 66, 503, 67, 566, 69, 615, 69, 668, 68, 702, 52, 724, 53, 784, 81, 812, 105, 846, 98, 880, 136, 895, 175, 913, 211, 972, 224, 996, 222, 1030, 261, 1045, 277, 1059, 308, 1044, 385, 1065, 417, 1038, 445, 1034, 475, 1022, 517, 1052, 548, 1071, 570, 1076, 614, 1063, 677, 1032, 711, 1011, 762, 920, 776, 865, 819, 826, 857, 805, 904, 731, 893, 705, 873, 706, 843, 709, 811, 667, 786, 600, 796, 522, 781, 440, 773, 380, 802, 332, 862, 307, 883, 262, 890, 246, 842, 215, 829, 158, 818, 123, 750, 107, 669, 32, 639, 13, 615, -2, 476, 43, 463, 82, 418)
+width = 1.0
+default_color = Color(0.298039, 0.298039, 0.298039, 1)
+antialiased = true
+
+[node name="Schermafbeelding2023-07-21234525" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(573, 438)
+scale = Vector2(1.67349, 1.67349)
+texture = ExtResource("5_dhw2h")

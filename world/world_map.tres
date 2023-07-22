@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c82jlltye0akm"]
+
+[ext_resource type="Texture2D" uid="uid://bd2g1kweox2rr" path="res://world/terrein.png" id="1_xaok8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3o7x"]
+texture = ExtResource("1_xaok8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/custom_data_1 = true
+0:0/0/custom_data_2 = true
+1:0/0 = 0
+1:0/0/custom_data_1 = true
+1:0/0/custom_data_3 = true
+0:1/0 = 0
+0:1/0/custom_data_0 = true
+1:1/0 = 0
+1:1/0/custom_data_1 = true
+
+[resource]
+tile_size = Vector2i(64, 64)
+custom_data_layer_0/name = "isSea"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "isLand"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "isLandmark"
+custom_data_layer_2/type = 1
+custom_data_layer_3/name = "isForrest"
+custom_data_layer_3/type = 1
+sources/0 = SubResource("TileSetAtlasSource_q3o7x")

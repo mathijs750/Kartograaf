@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnj8xht4m4uww"
+path="res://.godot/imported/tree_default_dark.obj-2188d1bba93ea842f2b3676ee849da36.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_default_dark.obj-2188d1bba93ea842f2b3676ee849da36.mesh"]
+
+source_file="res://island/models/tree_default_dark.obj"
+dest_files=["res://.godot/imported/tree_default_dark.obj-2188d1bba93ea842f2b3676ee849da36.mesh", "res://.godot/imported/tree_default_dark.obj-2188d1bba93ea842f2b3676ee849da36.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

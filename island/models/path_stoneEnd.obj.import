@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c16k1ah8xkss8"
+path="res://.godot/imported/path_stoneEnd.obj-2d48a1f2a1f999338f3c611623100f4d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_stoneEnd.obj-2d48a1f2a1f999338f3c611623100f4d.mesh"]
+
+source_file="res://island/models/path_stoneEnd.obj"
+dest_files=["res://.godot/imported/path_stoneEnd.obj-2d48a1f2a1f999338f3c611623100f4d.mesh", "res://.godot/imported/path_stoneEnd.obj-2d48a1f2a1f999338f3c611623100f4d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

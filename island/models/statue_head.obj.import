@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ebho2mt6tcg"
+path="res://.godot/imported/statue_head.obj-a80d648eddac8a960bfc99dffcf2c419.mesh"
+
+[deps]
+
+files=["res://.godot/imported/statue_head.obj-a80d648eddac8a960bfc99dffcf2c419.mesh"]
+
+source_file="res://island/models/statue_head.obj"
+dest_files=["res://.godot/imported/statue_head.obj-a80d648eddac8a960bfc99dffcf2c419.mesh", "res://.godot/imported/statue_head.obj-a80d648eddac8a960bfc99dffcf2c419.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

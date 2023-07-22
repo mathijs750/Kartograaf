@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtiruas2ly7gi"
+path="res://.godot/imported/cliff_halfCornerInner_stone.obj-c54eab4477ba441b7a0760a5595c358b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_halfCornerInner_stone.obj-c54eab4477ba441b7a0760a5595c358b.mesh"]
+
+source_file="res://island/models/cliff_halfCornerInner_stone.obj"
+dest_files=["res://.godot/imported/cliff_halfCornerInner_stone.obj-c54eab4477ba441b7a0760a5595c358b.mesh", "res://.godot/imported/cliff_halfCornerInner_stone.obj-c54eab4477ba441b7a0760a5595c358b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

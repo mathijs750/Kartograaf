@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chgxfyam6cve0"
+path="res://.godot/imported/tree_detailed_fall.obj-819b688288b4679db0a87456417f88da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_detailed_fall.obj-819b688288b4679db0a87456417f88da.mesh"]
+
+source_file="res://island/models/tree_detailed_fall.obj"
+dest_files=["res://.godot/imported/tree_detailed_fall.obj-819b688288b4679db0a87456417f88da.mesh", "res://.godot/imported/tree_detailed_fall.obj-819b688288b4679db0a87456417f88da.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

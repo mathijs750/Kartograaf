@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://30f5afxmn2en"
+path="res://.godot/imported/ground_riverSideOpen.obj-158e1903a536225f431af75c7baa39bb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverSideOpen.obj-158e1903a536225f431af75c7baa39bb.mesh"]
+
+source_file="res://island/models/ground_riverSideOpen.obj"
+dest_files=["res://.godot/imported/ground_riverSideOpen.obj-158e1903a536225f431af75c7baa39bb.mesh", "res://.godot/imported/ground_riverSideOpen.obj-158e1903a536225f431af75c7baa39bb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxpm0kkvmg63t"
+path="res://.godot/imported/lily_small.obj-4e62c24ccd4b1735b2090b97fd113dab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lily_small.obj-4e62c24ccd4b1735b2090b97fd113dab.mesh"]
+
+source_file="res://island/models/lily_small.obj"
+dest_files=["res://.godot/imported/lily_small.obj-4e62c24ccd4b1735b2090b97fd113dab.mesh", "res://.godot/imported/lily_small.obj-4e62c24ccd4b1735b2090b97fd113dab.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

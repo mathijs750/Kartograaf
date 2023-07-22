@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm4gpcxq71e2i"
+path="res://.godot/imported/tree_palmDetailedTall.obj-5c5f2b80ba82dd1f6078de1ff7de3a83.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_palmDetailedTall.obj-5c5f2b80ba82dd1f6078de1ff7de3a83.mesh"]
+
+source_file="res://island/models/tree_palmDetailedTall.obj"
+dest_files=["res://.godot/imported/tree_palmDetailedTall.obj-5c5f2b80ba82dd1f6078de1ff7de3a83.mesh", "res://.godot/imported/tree_palmDetailedTall.obj-5c5f2b80ba82dd1f6078de1ff7de3a83.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

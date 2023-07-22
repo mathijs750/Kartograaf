@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bq572emkqjjsg"
+path="res://.godot/imported/platform_beach.obj-bb45b4a77f7358c8e1b4d4d40d2ccd3f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/platform_beach.obj-bb45b4a77f7358c8e1b4d4d40d2ccd3f.mesh"]
+
+source_file="res://island/models/platform_beach.obj"
+dest_files=["res://.godot/imported/platform_beach.obj-bb45b4a77f7358c8e1b4d4d40d2ccd3f.mesh", "res://.godot/imported/platform_beach.obj-bb45b4a77f7358c8e1b4d4d40d2ccd3f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

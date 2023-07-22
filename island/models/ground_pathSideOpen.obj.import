@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://deys0y63mdwwa"
+path="res://.godot/imported/ground_pathSideOpen.obj-b2f5f8915a20e7f29ffee650fe1b4435.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_pathSideOpen.obj-b2f5f8915a20e7f29ffee650fe1b4435.mesh"]
+
+source_file="res://island/models/ground_pathSideOpen.obj"
+dest_files=["res://.godot/imported/ground_pathSideOpen.obj-b2f5f8915a20e7f29ffee650fe1b4435.mesh", "res://.godot/imported/ground_pathSideOpen.obj-b2f5f8915a20e7f29ffee650fe1b4435.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

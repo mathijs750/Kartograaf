@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmegtaax10ms"
+path="res://.godot/imported/ground_riverBendBank.obj-e73d4cf8c86815bb2b5b8603ac35857f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverBendBank.obj-e73d4cf8c86815bb2b5b8603ac35857f.mesh"]
+
+source_file="res://island/models/ground_riverBendBank.obj"
+dest_files=["res://.godot/imported/ground_riverBendBank.obj-e73d4cf8c86815bb2b5b8603ac35857f.mesh", "res://.godot/imported/ground_riverBendBank.obj-e73d4cf8c86815bb2b5b8603ac35857f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

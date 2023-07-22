@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0fy4i8g7phmg"
+path="res://.godot/imported/rock_largeC.obj-1f5d2a229eea8f586357da8615ca2ffd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock_largeC.obj-1f5d2a229eea8f586357da8615ca2ffd.mesh"]
+
+source_file="res://island/models/rock_largeC.obj"
+dest_files=["res://.godot/imported/rock_largeC.obj-1f5d2a229eea8f586357da8615ca2ffd.mesh", "res://.godot/imported/rock_largeC.obj-1f5d2a229eea8f586357da8615ca2ffd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

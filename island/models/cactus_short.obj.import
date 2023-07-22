@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c47kcjq3qetku"
+path="res://.godot/imported/cactus_short.obj-8b7e4d93f811dcd15474af7d84b353aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus_short.obj-8b7e4d93f811dcd15474af7d84b353aa.mesh"]
+
+source_file="res://island/models/cactus_short.obj"
+dest_files=["res://.godot/imported/cactus_short.obj-8b7e4d93f811dcd15474af7d84b353aa.mesh", "res://.godot/imported/cactus_short.obj-8b7e4d93f811dcd15474af7d84b353aa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

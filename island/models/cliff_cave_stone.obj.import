@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://sq1hvq42cjvx"
+path="res://.godot/imported/cliff_cave_stone.obj-27b5bc453bb8f38849e1afa8f0cc1666.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_cave_stone.obj-27b5bc453bb8f38849e1afa8f0cc1666.mesh"]
+
+source_file="res://island/models/cliff_cave_stone.obj"
+dest_files=["res://.godot/imported/cliff_cave_stone.obj-27b5bc453bb8f38849e1afa8f0cc1666.mesh", "res://.godot/imported/cliff_cave_stone.obj-27b5bc453bb8f38849e1afa8f0cc1666.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

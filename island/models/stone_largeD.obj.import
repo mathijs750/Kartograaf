@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv3wo3ept6wkx"
+path="res://.godot/imported/stone_largeD.obj-1cd1f89a576a424ea9c6df5ca89aa392.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stone_largeD.obj-1cd1f89a576a424ea9c6df5ca89aa392.mesh"]
+
+source_file="res://island/models/stone_largeD.obj"
+dest_files=["res://.godot/imported/stone_largeD.obj-1cd1f89a576a424ea9c6df5ca89aa392.mesh", "res://.godot/imported/stone_largeD.obj-1cd1f89a576a424ea9c6df5ca89aa392.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

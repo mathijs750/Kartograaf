@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0a5y154elbd8"
+path="res://.godot/imported/pot_large.obj-9647baa0b934223d7408c4bf42970c02.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pot_large.obj-9647baa0b934223d7408c4bf42970c02.mesh"]
+
+source_file="res://island/models/pot_large.obj"
+dest_files=["res://.godot/imported/pot_large.obj-9647baa0b934223d7408c4bf42970c02.mesh", "res://.godot/imported/pot_large.obj-9647baa0b934223d7408c4bf42970c02.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

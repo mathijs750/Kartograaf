@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdupkh0grwy27"]
+
+[ext_resource type="PackedScene" uid="uid://lqyku5wn2wo0" path="res://player/MovementController.tscn" id="1_e028p"]
+[ext_resource type="PackedScene" uid="uid://b8drbos167vf8" path="res://player/Head.tscn" id="2_03mhr"]
+[ext_resource type="Script" path="res://player/Sprint.gd" id="3_kwtut"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_00rii"]
+
+[node name="Player" instance=ExtResource("1_e028p")]
+speed = 7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collision" index="0"]
+mesh = SubResource("CapsuleMesh_00rii")
+
+[node name="Head" parent="." index="1" instance=ExtResource("2_03mhr")]
+
+[node name="Sprint" type="Node" parent="." index="2"]
+script = ExtResource("3_kwtut")

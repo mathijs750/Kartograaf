@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wmkc13vlpr41"
+path="res://.godot/imported/cliff_cornerInner_stone.obj-8bc406e122875c5adca4e1f3fa103871.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_cornerInner_stone.obj-8bc406e122875c5adca4e1f3fa103871.mesh"]
+
+source_file="res://island/models/cliff_cornerInner_stone.obj"
+dest_files=["res://.godot/imported/cliff_cornerInner_stone.obj-8bc406e122875c5adca4e1f3fa103871.mesh", "res://.godot/imported/cliff_cornerInner_stone.obj-8bc406e122875c5adca4e1f3fa103871.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

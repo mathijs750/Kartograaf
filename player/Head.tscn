@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8drbos167vf8"]
+
+[ext_resource type="Script" path="res://player/Head.gd" id="1_42bud"]
+[ext_resource type="Texture2D" uid="uid://lbr3qcfq1mfq" path="res://player/crosshair179.png" id="2_wqpg6"]
+
+[node name="Head" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+script = ExtResource("1_42bud")
+
+[node name="Camera" type="Camera3D" parent="."]
+current = true
+
+[node name="Crosshair" type="Sprite3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0924991)
+pixel_size = 0.0001
+texture = ExtResource("2_wqpg6")

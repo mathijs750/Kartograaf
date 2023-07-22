@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvkmh6plhtjp3"
+path="res://.godot/imported/tree_fat_darkh.obj-d64983c5ec3936468f985a26196002ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree_fat_darkh.obj-d64983c5ec3936468f985a26196002ee.mesh"]
+
+source_file="res://island/models/tree_fat_darkh.obj"
+dest_files=["res://.godot/imported/tree_fat_darkh.obj-d64983c5ec3936468f985a26196002ee.mesh", "res://.godot/imported/tree_fat_darkh.obj-d64983c5ec3936468f985a26196002ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
