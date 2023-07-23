@@ -14,6 +14,9 @@ script = ExtResource("1_wf3wi")
 
 [node name="Player" parent="." instance=ExtResource("1_b6m7t")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 12.6748, 1.70325, -2.92734)
+acceleration = 5
+deceleration = 5
+jump_height = 3
 
 [node name="WorldMap" type="TileMap" parent="."]
 visible = false
