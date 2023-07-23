@@ -26,6 +26,10 @@ mouse_cursor/custom_image="res://Cursor.png"
 
 enabled=PackedStringArray()
 
+[gui]
+
+theme/custom="res://UITheme.tres"
+
 [input]
 
 move_forward={

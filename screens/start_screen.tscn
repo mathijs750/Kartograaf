@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckyvp0kg40l7x"]
+
+[ext_resource type="Theme" uid="uid://dufme24qutu8r" path="res://UITheme.tres" id="1_7ce10"]
+[ext_resource type="Texture2D" uid="uid://8uwnfivnws3a" path="res://map/Textures/parchmentAncient.png" id="1_mknlc"]
+[ext_resource type="Script" path="res://screens/start_screen.gd" id="1_s1m0h"]
+[ext_resource type="Texture2D" uid="uid://c751f573j2cjp" path="res://Kartograaf.png" id="2_44cis"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fy42k"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7ce10")
+script = ExtResource("1_s1m0h")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mknlc")
+
+[node name="Logo" type="TextureRect" parent="Panel"]
+layout_mode = 2
+offset_left = 515.0
+offset_top = 86.0
+offset_right = 947.0
+offset_bottom = 277.0
+rotation = 0.0109041
+texture = ExtResource("2_44cis")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -657.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "Cartographer's Charter"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator3" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "As High Seas Admiral, I task you with mapping the island, currently known as Baduga. Chart its terrain, landmarks, and potential hazards using the agreed pictographs only. You have the option to rename the island if appropriate. Provide regular updates, and prioritize precision in your endeavors. 
+Your map will guide our future voyages.
+
+Admiral Vloerbood"
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 55
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fy42k")
+
+[node name="StartButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="HSeparator4" type="HSeparator" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_fy42k")
+
+[connection signal="pressed" from="Panel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

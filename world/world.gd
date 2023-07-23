@@ -7,8 +7,11 @@ extends Node3D
 
 @export var fast_close := true
 
+signal end_score(score)
+
 var total_score: int = 0
 
+var hasStarted := false
 var mapActive := false
 var selectedTileisLand = false
 var selectedTileisSea = false
@@ -17,7 +20,7 @@ var selectedTileisLandmark = false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func startGame() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	if !OS.is_debug_build():
@@ -27,11 +30,11 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+#	if event.is_action_pressed(&"open_map"):
+#		toggleMap()
+	
 	if event.is_action_pressed(&"ui_cancel"):
 		get_tree().quit() # Quits the game
-
-	if event.is_action_pressed(&"open_map"):
-		toggleMap()
 
 	if event.is_action_pressed(&"change_mouse_input"):
 		toggleMouse()
@@ -40,6 +43,9 @@ func _input(event: InputEvent) -> void:
 # Capture mouse if clicked on the game, needed for HTML5
 # Called when an InputEvent hasn't been consumed by _input() or any GUI item
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"open_map"):
+		toggleMap()
+	
 	if event is InputEventMouseButton:
 		if mapActive:
 			return
@@ -87,3 +93,13 @@ func _on_world_map_tile_sampled(_tile_coords, isLand, isWater, isForrest, isLand
 	total_score += score
 	print("Total score: ", total_score)
 
+
+
+func _on_map_end_game():
+	print("End Game!")
+	end_score.emit(total_score)
+
+func _on_start_screen_start_game():
+	$StartScreen.visible = false
+	hasStarted = true
+	startGame()

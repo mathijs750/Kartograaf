@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dufme24qutu8r"]
+
+[ext_resource type="FontFile" uid="uid://dtk62tdsjecuw" path="res://screens/Tangerine-Regular.ttf" id="1_ud7a1"]
+[ext_resource type="FontFile" uid="uid://cop6pd0y3j654" path="res://screens/Tangerine-Bold.ttf" id="2_6aj5q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_erf7h"]
+
+[resource]
+default_font = ExtResource("2_6aj5q")
+default_font_size = 40
+Fonts/fonts/normal = ExtResource("1_ud7a1")
+HSeparator/constants/separation = 4
+HSeparator/styles/separator = SubResource("StyleBoxEmpty_erf7h")

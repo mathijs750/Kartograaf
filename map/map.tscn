@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://yplhit0jpkeb"]
+[gd_scene load_steps=10 format=3 uid="uid://yplhit0jpkeb"]
 
 [ext_resource type="Script" path="res://map/map.gd" id="1_3ajeq"]
 [ext_resource type="Texture2D" uid="uid://80f7jx31eif2" path="res://map/Textures/parchmentFolded.png" id="1_p2nx4"]
 [ext_resource type="Texture2D" uid="uid://8uwnfivnws3a" path="res://map/Textures/parchmentAncient.png" id="2_t82um"]
 [ext_resource type="TileSet" uid="uid://cp7otyxtd8cpt" path="res://map/map_tiles.tres" id="3_jcptp"]
 [ext_resource type="Texture2D" uid="uid://cv0ys7du8q5iv" path="res://world/Schermafbeelding 2023-07-21 234525.png" id="5_dhw2h"]
+[ext_resource type="Texture2D" uid="uid://d3lybn1ywdnv5" path="res://map/sprites/compass.png" id="6_831yf"]
+[ext_resource type="Texture2D" uid="uid://bg0ib7krwbdwn" path="res://map/sprites/elementSquare.png" id="7_l5x6h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_liaqa"]
+bg_color = Color(0.996094, 0.957031, 0.769531, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_size = 2
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yguok"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_3ajeq")
@@ -25,23 +38,227 @@ position = Vector2(1823, 450)
 scale = Vector2(1.41992, 0.898438)
 texture = ExtResource("2_t82um")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_jcptp")
 format = 2
-layer_0/tile_data = PackedInt32Array(786446, 131072, 6, 65554, 0, 2, 131090, 0, 3, 262162, 327680, 3, 262163, 327680, 2, 327698, 327680, 1, 327699, 262144, 1, 393234, 0, 4, 458770, 0, 1, 393235, 131072, 1, 458771, 196608, 0, 524307, 262144, 7, 393216, 196608, 2, 327680, 131072, 6, 65556, 131072, 6, 131092, 589824, 0, 65557, 524288, 0, 262164, 196608, 6, 327700, 196608, 7, 393236, 196608, 8, 262165, 196608, 4, 327701, 196608, 5, 393237, 196608, 6, 458772, 0, 9, 458773, 65536, 9, 524309, 65536, 8)
+layer_0/name = "gameplay"
+layer_0/tile_data = PackedInt32Array(393231, 131072, 6, 327699, 0, 9, 327700, 65536, 8, 196626, 131072, 6, 196628, 196608, 8, 327698, 65536, 9, 458771, 327680, 6, 458772, 327680, 7, 458770, 327680, 2, 196629, 196608, 7, 327701, 131072, 0, 458773, 327680, 3, 524309, 589824, 0, 524308, 458752, 1, 524307, 393216, 1, 524306, 524288, 0)
+layer_1/name = "hints"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(393217, 196608, 2, 393231, 524288, 0, 393230, 131072, 6, 393232, 131072, 6, 65546, 131072, 6, 720911, 131072, 6, 851983, 131072, 6, 851984, 131072, 6, 786448, 131072, 6, 786447, 131072, 6, 720912, 131072, 6, 851982, 131072, 6, 851968, 131072, 6, 786432, 131072, 6, 786433, 131072, 6, 851969, 131072, 6, 851970, 131072, 6, 0, 131072, 6, 1, 131072, 6, 65537, 131072, 6, 65536, 131072, 6, 131072, 131072, 6, 16, 131072, 6, 15, 131072, 6, 14, 131072, 6, 65552, 131072, 6)
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(81, 402, 94, 339, 133, 316, 130, 230, 139, 170, 176, 111, 212, 81, 250, 43, 273, 24, 317, 15, 411, 29, 454, 66, 503, 67, 566, 69, 615, 69, 668, 68, 702, 52, 724, 53, 784, 81, 812, 105, 846, 98, 880, 136, 895, 175, 913, 211, 972, 224, 996, 222, 1030, 261, 1045, 277, 1059, 308, 1044, 385, 1065, 417, 1038, 445, 1034, 475, 1022, 517, 1052, 548, 1071, 570, 1076, 614, 1063, 677, 1032, 711, 1011, 762, 920, 776, 865, 819, 826, 857, 805, 904, 731, 893, 705, 873, 706, 843, 709, 811, 667, 786, 600, 796, 522, 781, 440, 773, 380, 802, 332, 862, 307, 883, 262, 890, 246, 842, 215, 829, 158, 818, 123, 750, 107, 669, 32, 639, 13, 615, -2, 476, 43, 463, 82, 418)
-width = 1.0
+points = PackedVector2Array(62, 381, 120, 384, 176, 380, 181, 402, 185, 449, 183, 494, 136, 495, 98, 495, 60, 505, 48, 549, 53, 598, 51, 645, 60, 695, 96, 707, 117, 746, 132, 775, 170, 771, 176, 803, 191, 837, 240, 835, 312, 837, 356, 826, 393, 828, 405, 806, 426, 780, 473, 767, 489, 801, 517, 841, 566, 839, 621, 833, 658, 829, 706, 833, 745, 841, 803, 829, 834, 818, 843, 774, 883, 761, 896, 731, 905, 673, 918, 641, 940, 626, 975, 633, 998, 635, 1021, 630, 1039, 576, 1079, 568, 1087, 482, 1083, 454, 1078, 440, 1047, 436)
+width = 2.0
 default_color = Color(0.298039, 0.298039, 0.298039, 1)
+joint_mode = 2
+antialiased = true
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(1045, 379, 1082, 369, 1085, 323, 1088, 285, 1080, 241, 1078, 197, 1028, 168, 1019, 146, 1008, 122, 970, 119, 954, 93, 948, 63, 897, 58, 883, 74, 866, 100, 840, 106, 822, 121, 811, 167, 780, 186, 727, 175, 675, 177, 638, 187, 602, 178, 578, 160, 567, 141, 549, 121, 527, 121, 507, 99, 494, 58, 476, 52, 464, 58, 432, 55, 398, 51, 367, 53, 312, 53, 287, 55, 252, 44, 206, 54, 190, 68, 183, 94, 168, 118, 137, 119, 118, 132, 114, 159, 103, 179, 82, 185, 64, 192, 52, 224, 45, 272, 51, 293, 51, 314, 41, 334, 52, 371, 62, 381)
+width = 2.0
+default_color = Color(0.298039, 0.298039, 0.298039, 1)
+joint_mode = 2
 antialiased = true
 
 [node name="Schermafbeelding2023-07-21234525" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.290196)
 position = Vector2(573, 438)
 scale = Vector2(1.67349, 1.67349)
 texture = ExtResource("5_dhw2h")
+
+[node name="selectionMarker" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.462745)
+position = Vector2(1184, 488)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("7_l5x6h")
+
+[node name="labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1104.0
+offset_top = 265.0
+offset_right = 1175.0
+offset_bottom = 308.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Water"
+
+[node name="submit" type="Button" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1130.0
+offset_top = 113.0
+offset_right = 1335.0
+offset_bottom = 159.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_liaqa")
+text = "Submit to Admiral"
+
+[node name="Label7" type="LineEdit" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1077.0
+offset_top = 51.0
+offset_right = 1382.0
+offset_bottom = 99.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yguok")
+text = "Baduga"
+alignment = 1
+
+[node name="Label8" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1079.0
+offset_top = 23.0
+offset_right = 1384.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Map of the isle of"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1199.0
+offset_top = 394.0
+offset_right = 1270.0
+offset_bottom = 437.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Forest"
+
+[node name="Label4" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1176.0
+offset_top = 580.0
+offset_right = 1301.0
+offset_bottom = 623.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Landmarks"
+
+[node name="Label2" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1230.0
+offset_top = 258.0
+offset_right = 1365.0
+offset_bottom = 301.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Mountains"
+
+[node name="Label6" type="Label" parent="labels"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1071.0
+offset_top = 697.0
+offset_right = 1386.0
+offset_bottom = 912.0
+grow_horizontal = 0
+rotation = -0.0514307
+theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "Esteemed Cartographer, kindly confine your artistry to the approved set of pictographs; extraneous symbols may disrupt the nautical clarity. Remember, precision ensures our vessel's safe passage."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Compass" type="Sprite2D" parent="labels"]
+position = Vector2(1010, 830)
+rotation = -0.211185
+texture = ExtResource("6_831yf")
+
+[node name="EndScreen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1823, 450)
+scale = Vector2(1.41992, 0.898438)
+texture = ExtResource("2_t82um")
+
+[node name="LabelsEnd" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="LabelsEnd"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1077.0
+offset_top = 51.0
+offset_right = 1382.0
+offset_bottom = 99.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yguok")
+text = "Baduga"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="LabelsEnd"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1079.0
+offset_top = 23.0
+offset_right = 1384.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "Map of the isle of"
+horizontal_alignment = 1
+
+[node name="Ending" type="Label" parent="LabelsEnd"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1082.0
+offset_top = 108.0
+offset_right = 1397.0
+offset_bottom = 878.0
+grow_horizontal = 0
+rotation = 0.00604029
+theme_override_colors/font_color = Color(0.376471, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+autowrap_mode = 2
+
+[connection signal="pressed" from="labels/submit" to="." method="_on_submit_pressed"]

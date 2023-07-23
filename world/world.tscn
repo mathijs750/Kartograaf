@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxkq07ic2uoth"]
+[gd_scene load_steps=8 format=3 uid="uid://bxkq07ic2uoth"]
 
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://player/Player.tscn" id="1_b6m7t"]
 [ext_resource type="TileSet" uid="uid://c82jlltye0akm" path="res://world/world_map.tres" id="1_vvlt5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bj60jdrslniki" path="res://island/island.tscn" id="3_g8gt0"]
 [ext_resource type="PackedScene" uid="uid://yplhit0jpkeb" path="res://map/map.tscn" id="3_uec24"]
 [ext_resource type="Script" path="res://world/WorldMap.gd" id="4_q62rf"]
+[ext_resource type="PackedScene" uid="uid://ckyvp0kg40l7x" path="res://screens/start_screen.tscn" id="7_76v41"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_wf3wi")
@@ -26,6 +27,11 @@ visible = false
 
 [node name="Island" parent="." instance=ExtResource("3_g8gt0")]
 
+[node name="StartScreen" parent="." instance=ExtResource("7_76v41")]
+
+[connection signal="end_score" from="." to="Map" method="_on_world_end_score"]
 [connection signal="tile_sampled" from="WorldMap" to="." method="_on_world_map_tile_sampled"]
+[connection signal="end_game" from="Map" to="." method="_on_map_end_game"]
 [connection signal="tile_placed" from="Map" to="WorldMap" method="_on_map_tile_placed"]
 [connection signal="tile_selected" from="Map" to="." method="_on_map_tile_selected_on_map"]
+[connection signal="start_game" from="StartScreen" to="." method="_on_start_screen_start_game"]
