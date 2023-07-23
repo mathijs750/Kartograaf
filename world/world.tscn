@@ -25,3 +25,7 @@ script = ExtResource("4_q62rf")
 visible = false
 
 [node name="Island" parent="." instance=ExtResource("3_g8gt0")]
+
+[connection signal="tile_sampled" from="WorldMap" to="." method="_on_world_map_tile_sampled"]
+[connection signal="tile_placed" from="Map" to="WorldMap" method="_on_map_tile_placed"]
+[connection signal="tile_selected" from="Map" to="." method="_on_map_tile_selected_on_map"]

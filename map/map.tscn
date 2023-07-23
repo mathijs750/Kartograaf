@@ -41,7 +41,7 @@ default_color = Color(0.298039, 0.298039, 0.298039, 1)
 antialiased = true
 
 [node name="Schermafbeelding2023-07-21234525" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0.290196)
 position = Vector2(573, 438)
 scale = Vector2(1.67349, 1.67349)
 texture = ExtResource("5_dhw2h")

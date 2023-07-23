@@ -14,10 +14,8 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if event.position.x <= 1087:
-				print("Placing tile")
 				placeTile(event.position)
 			else:
-				print("Selecting tile")
 				getTileData(event.position)
 #		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 #			print("Wheel up")
