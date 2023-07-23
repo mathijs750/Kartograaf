@@ -5,7 +5,20 @@ env:
   GODOT_VERSION: 4.1
   EXPORT_NAME: kartograaf
   
+
+  
 jobs:
+
+  import-assets:
+    name: import assets
+    runs-on: ubuntu-20.04
+    container:
+      image: barichello/godot-ci:4.1
+    steps:
+      - name: Import
+        run: |
+          godot -v -e --quit --headless
+
   export-windows:
     name: Windows Export
     runs-on: ubuntu-20.04
@@ -28,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: windows
-          path: build/windows
+          path: ../build/windows
       - name: Butler Push
         uses: josephbmanley/butler-publish-itchio-action@v1.0.3
         env:
