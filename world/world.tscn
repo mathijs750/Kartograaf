@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxkq07ic2uoth"]
+[gd_scene load_steps=9 format=3 uid="uid://bxkq07ic2uoth"]
 
 [ext_resource type="PackedScene" uid="uid://bdupkh0grwy27" path="res://player/Player.tscn" id="1_b6m7t"]
 [ext_resource type="TileSet" uid="uid://c82jlltye0akm" path="res://world/world_map.tres" id="1_vvlt5"]
@@ -7,12 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://yplhit0jpkeb" path="res://map/map.tscn" id="3_uec24"]
 [ext_resource type="Script" path="res://world/WorldMap.gd" id="4_q62rf"]
 [ext_resource type="PackedScene" uid="uid://ckyvp0kg40l7x" path="res://screens/start_screen.tscn" id="7_76v41"]
+[ext_resource type="PackedScene" uid="uid://bv08oljhh31g" path="res://island/watercraftPack_007.gltf" id="8_1o7x0"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_wf3wi")
 
 [node name="Player" parent="." instance=ExtResource("1_b6m7t")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 7.66902, 0.5, -3.8023)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 12.6748, 1.70325, -2.92734)
 
 [node name="WorldMap" type="TileMap" parent="."]
 visible = false
@@ -28,6 +29,10 @@ visible = false
 [node name="Island" parent="." instance=ExtResource("3_g8gt0")]
 
 [node name="StartScreen" parent="." instance=ExtResource("7_76v41")]
+visible = false
+
+[node name="watercraftPack_007" parent="." instance=ExtResource("8_1o7x0")]
+transform = Transform3D(-3.59263e-08, 0, -0.821899, 0, 0.821899, 0, 0.821899, 0, -3.59263e-08, 17.6721, -0.564705, -0.045444)
 
 [connection signal="end_score" from="." to="Map" method="_on_world_end_score"]
 [connection signal="tile_sampled" from="WorldMap" to="." method="_on_world_map_tile_sampled"]
