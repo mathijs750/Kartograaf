@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bj60jdrslniki"]
+[gd_scene load_steps=12 format=3 uid="uid://bj60jdrslniki"]
 
 [ext_resource type="MeshLibrary" uid="uid://c6i2pngs2rh0e" path="res://island/mesh_library.tres" id="1_oejpw"]
 [ext_resource type="Texture2D" uid="uid://cv0ys7du8q5iv" path="res://world/Schermafbeelding 2023-07-21 234525.png" id="3_as28q"]
 [ext_resource type="PackedScene" uid="uid://b571q8ga02g6v" path="res://lighting/lighting.tscn" id="4_5pyxd"]
 [ext_resource type="ArrayMesh" uid="uid://b3ivqevwkn0bu" path="res://island/models/tree_plateau.obj" id="4_pfv63"]
 [ext_resource type="ArrayMesh" uid="uid://7jl4hnpfc0nq" path="res://island/models/tree_pineSmallA.obj" id="5_4t2j4"]
+[ext_resource type="ArrayMesh" uid="uid://ccwluojb2uojo" path="res://island/models/bridge_center_wood.obj" id="6_xg4la"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caior"]
 albedo_color = Color(0.0666667, 0.513726, 0.956863, 1)
@@ -14,30 +15,482 @@ albedo_color = Color(0.0666667, 0.513726, 0.956863, 1)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ln4l5"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3vdsr"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_31rm5"]
+size = Vector3(4, 10, 4)
+
 [node name="Island" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(104.851, 0, 0, 0, 20, 0, 0, 0, 255.524, 0.0447311, -0.0332551, 0.179808)
 material_override = SubResource("StandardMaterial3D_caior")
 mesh = SubResource("PlaneMesh_6hojh")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Water"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ln4l5")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Water"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_3vdsr")
 
 [node name="Lighting" parent="." instance=ExtResource("4_5pyxd")]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-5.28134, 0, 0, 0, -2.31663e-07, 1, 0, -5.29983, -4.37114e-08, -0.103237, -0.205144, -0.0763518)
+transform = Transform3D(-5.28134, 0, 0, 0, -2.31663e-07, 1, 0, -5.29983, -4.37114e-08, -0.103237, 1.02041, -0.0763518)
+visible = false
 texture = ExtResource("3_as28q")
 
 [node name="TreePlateau" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.44908, 1, -8.4161)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.18118, 1, -7.64812)
 mesh = ExtResource("4_pfv63")
 
 [node name="TreePineSmallA" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79158, 1, -7.40076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52368, 1, -6.63278)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.37796, 1, -7.54096)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72046, 1, -6.52562)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5741, 1, -4.11183)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9166, 1, -3.09649)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3234, 1, -3.54031)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6659, 1, -2.52497)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60884, 1, -5.07627)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95134, 1, -4.06093)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05231, 1, -5.29059)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70981, 1, -4.27525)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.052309, 1, -3.29059)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.709808, 1, -2.27525)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44826, 1, -7.23766)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79076, 1, -6.22232)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.18118, 1, -9.91667)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52368, 1, -8.90133)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5696, 1, -10.6439)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9121, 1, -9.6286)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38779, 1, -11.3382)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73029, 1, -10.3228)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51177, 1, -11.4043)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.85427, 1, -10.3889)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71839, 1, -9.8175)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06089, 1, -8.80216)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9592, 1, -8.92494)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6167, 1, -7.9096)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3477, 1, -9.15634)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0052, 1, -8.141)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3146, 1, -7.30511)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9721, 1, -6.28977)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4964, 1, -7.43734)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1539, 1, -6.422)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5791, 1, -5.58611)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2366, 1, -4.57077)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.61215, 1, -5.32165)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.26965, 1, -4.30631)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.38076, 1, -5.65222)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03826, 1, -4.63689)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau21" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.13283, 1, -5.51999)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA21" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79033, 1, -4.50465)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau22" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116313, 1, -4.75967)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA22" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.773813, 1, -3.74433)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau23" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.10802, 1, 0.562629)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA23" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.76551, 1, 1.57797)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau24" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14107, 1, 2.3808)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA24" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.79857, 1, 3.39614)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau25" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9592, 1, 2.11634)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA25" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6167, 1, 3.13168)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau26" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3312, 1, 0.612209)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau50" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.933263, 1, 7.38904)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau51" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867146, 1, 5.7031)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau52" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.94977, 1, -5.0076)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau53" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7845, 1, -0.544811)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau54" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50474, 1, 8.61218)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau55" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63697, 1, 6.86012)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau56" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.47167, 1, 7.22375)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau57" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45513, 1, 5.10806)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau58" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96844, 1, -10.9479)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau59" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2727, 1, -8.53257)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau60" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22498, 1, -2.86576)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau61" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76194, 1, -2.41601)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau62" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.27523, 1, -5.06952)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePlateau63" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.964368, -0.264563, 0, 0.264563, 0.964368, -3.27523, 1, -5.06952)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA26" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6167, 1, 1.13168)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau27" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.95925, 1, 0.116344)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA27" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6167, 1, 1.13168)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau28" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.70305, 1, 3.88492)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA28" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36055, 1, 4.90026)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau29" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98405, 1, 4.97583)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA29" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.64155, 1, 5.99117)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau30" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8353, 1, 6.89318)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA30" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4928, 1, 7.90851)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau31" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71134, 1, 7.81879)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA31" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36884, 1, 8.83413)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau32" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.711337, 1, 6.81879)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA32" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36884, 1, 7.83413)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau33" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28866, 1, 3.81879)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA33" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63116, 1, 4.83413)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau34" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63576, 1, 3.1907)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA34" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97826, 1, 4.20603)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau35" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72667, 1, 0.612194)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA35" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.06917, 1, 1.62753)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau36" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.24732, 1, 2.43037)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341914, 1, -2.76915)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau41" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34651, 1, -4.41258)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA42" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68901, 1, -3.39724)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau42" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.43742, 1, -6.99108)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA43" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77992, 1, -5.97574)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau43" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95807, 1, -5.17291)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA44" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 6.37205, 1, 3.8841)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau44" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 3.31548, 1, 2.33948)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA45" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 4.52465, 1, 2.30598)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau45" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 0.572695, 1, 2.90154)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA46" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 1.78187, 1, 2.86803)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau46" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 1.20927, 1, 0.618357)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA47" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 11.1985, 1, 4.94195)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau47" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 9.00141, 1, 2.73618)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA48" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 9.54942, 1, 3.463)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau48" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 6.25863, 1, 3.29823)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA49" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 7.4678, 1, 3.26473)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau49" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.566593, 0, 0.823998, 0, 1, 0, -0.823998, 0, -0.566593, 6.8952, 1, 1.01505)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA36" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.58982, 1, 3.44571)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau37" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42915, 1, 4.54606)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA37" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77165, 1, 5.5614)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau38" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.31344, 1, 4.61218)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA38" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65594, 1, 5.62752)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau39" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31344, 1, -1.38782)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA39" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65594, 1, -0.372482)
+mesh = ExtResource("5_4t2j4")
+
+[node name="TreePlateau40" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22254, 1, -2.64401)
+mesh = ExtResource("4_pfv63")
+
+[node name="TreePineSmallA40" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56504, 1, -1.62868)
 mesh = ExtResource("5_4t2j4")
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -48,3 +501,143 @@ data = {
 "cells": PackedInt32Array(65521, 65528, 14, 65520, 65528, 14, 65520, 65529, 14, 65521, 65529, 14, 65521, 65530, 14, 65521, 65531, 14, 65521, 65532, 14, 65521, 65533, 14, 65520, 65533, 14, 65520, 65532, 14, 65520, 65531, 14, 65520, 65530, 14, 65520, 0, 14, 65520, 1, 14, 65520, 2, 14, 65521, 2, 14, 65521, 3, 14, 65521, 1, 14, 65521, 0, 14, 65520, 3, 14, 65522, 3, 14, 65523, 3, 14, 65523, 2, 14, 65522, 2, 14, 65522, 4, 14, 65522, 5, 14, 65523, 5, 14, 65524, 5, 14, 65525, 5, 14, 65526, 5, 14, 65526, 4, 14, 65525, 4, 14, 65524, 4, 14, 65523, 4, 14, 65526, 3, 14, 65527, 3, 14, 65527, 4, 14, 65528, 4, 14, 65528, 5, 14, 65529, 5, 14, 65529, 4, 14, 65529, 3, 14, 65529, 2, 14, 65529, 1, 14, 65529, 0, 14, 65528, 0, 14, 65527, 0, 14, 65526, 0, 14, 65525, 0, 14, 65524, 0, 14, 65523, 0, 14, 65522, 0, 14, 65522, 1, 14, 65523, 1, 14, 65524, 1, 14, 65525, 1, 14, 65526, 1, 14, 65527, 1, 14, 65528, 1, 14, 65528, 2, 14, 65528, 3, 14, 65525, 3, 14, 65525, 2, 14, 65526, 2, 14, 65524, 2, 14, 65524, 3, 14, 65527, 2, 14, 65527, 5, 14, 65522, 65526, 14, 65522, 65527, 14, 65522, 65528, 14, 65522, 65529, 14, 65522, 65530, 14, 65522, 65531, 14, 65523, 65531, 14, 65523, 65532, 14, 65523, 65533, 14, 65522, 65533, 14, 65524, 65533, 14, 65525, 65533, 14, 65526, 65533, 14, 65527, 65533, 14, 65528, 65533, 14, 65529, 65533, 14, 65529, 65532, 14, 65529, 65529, 14, 65529, 65528, 14, 65522, 65532, 14, 65524, 65532, 14, 65525, 65532, 14, 65526, 65532, 14, 65527, 65532, 14, 65528, 65532, 14, 65527, 65529, 14, 65527, 65530, 14, 65527, 65531, 14, 65526, 65531, 14, 65526, 65530, 14, 65526, 65529, 14, 65527, 65528, 14, 65527, 65527, 14, 65527, 65526, 14, 65526, 65526, 14, 65525, 65526, 14, 65524, 65526, 14, 65523, 65526, 14, 65523, 65527, 14, 65523, 65528, 14, 65523, 65529, 14, 65523, 65530, 14, 65524, 65529, 14, 65525, 65529, 14, 65526, 65528, 14, 65526, 65527, 14, 65525, 65527, 14, 65524, 65528, 14, 65525, 65528, 14, 65525, 65525, 14, 65525, 65524, 14, 65524, 65524, 14, 65524, 65525, 14, 65524, 65527, 14, 65528, 65528, 14, 65528, 65529, 14, 65530, 65528, 14, 65530, 65529, 14, 65530, 65530, 14, 65530, 65531, 14, 65530, 65532, 14, 65530, 65533, 14, 65531, 65533, 14, 65532, 65533, 14, 65533, 65533, 14, 65533, 65532, 14, 65533, 65531, 14, 65533, 65530, 14, 65533, 65529, 14, 65533, 65528, 14, 65532, 65528, 14, 65531, 65528, 14, 65531, 65529, 14, 65531, 65530, 14, 65531, 65531, 14, 65531, 65532, 14, 65532, 65531, 14, 65532, 65530, 14, 65532, 65529, 14, 65532, 65532, 14, 65532, 65534, 14, 65532, 65535, 14, 65533, 65535, 14, 65534, 65535, 14, 65535, 65535, 14, 0, 65535, 14, 1, 65535, 14, 1, 65534, 14, 1, 65533, 14, 1, 65532, 14, 1, 65531, 14, 1, 65530, 14, 1, 65529, 14, 1, 65528, 14, 1, 65527, 14, 1, 65526, 14, 0, 65526, 14, 0, 65527, 14, 0, 65528, 14, 0, 65529, 14, 0, 65530, 14, 0, 65531, 14, 0, 65532, 14, 0, 65533, 14, 0, 65534, 14, 65535, 65534, 14, 65534, 65534, 14, 65533, 65534, 14, 65534, 65533, 14, 65535, 65533, 14, 65535, 65532, 14, 65535, 65531, 14, 65535, 65530, 14, 65535, 65529, 14, 65534, 65529, 14, 65534, 65528, 14, 65534, 65530, 14, 65534, 65531, 14, 65534, 65532, 14, 65535, 65528, 14, 65526, 6, 14, 65526, 7, 14, 65526, 8, 14, 65526, 9, 14, 65527, 9, 14, 65527, 8, 14, 65527, 7, 14, 65527, 6, 14, 65530, 4, 14, 65531, 4, 14, 65532, 4, 14, 65533, 4, 14, 65533, 5, 14, 65532, 5, 14, 65531, 5, 14, 65529, 6, 14, 65528, 6, 14, 65528, 7, 14, 65529, 7, 14, 65530, 7, 14, 65531, 7, 14, 65532, 7, 14, 65533, 7, 14, 65533, 6, 14, 65532, 6, 14, 65531, 6, 14, 65530, 6, 14, 65530, 5, 14, 65531, 8, 14, 65531, 9, 14, 65530, 9, 14, 65530, 10, 14, 65529, 10, 14, 65528, 10, 14, 65528, 11, 14, 65530, 8, 14, 65530, 11, 14, 65529, 11, 14, 65531, 11, 14, 65532, 11, 14, 65533, 11, 14, 65534, 11, 14, 65535, 11, 14, 0, 11, 14, 1, 11, 14, 1, 10, 14, 1, 9, 14, 1, 8, 14, 1, 7, 14, 1, 6, 14, 0, 6, 14, 65535, 6, 14, 65535, 7, 14, 65534, 7, 14, 65534, 8, 14, 65534, 9, 14, 65534, 10, 14, 65531, 10, 14, 65532, 10, 14, 65533, 10, 14, 65535, 10, 14, 65535, 9, 14, 65535, 8, 14, 65533, 8, 14, 65533, 9, 14, 65532, 9, 14, 0, 9, 14, 0, 8, 14, 0, 7, 14, 65534, 6, 14, 65532, 8, 14, 0, 10, 14, 2, 9, 14, 3, 9, 14, 4, 9, 14, 5, 9, 14, 6, 9, 14, 7, 9, 14, 8, 9, 14, 9, 9, 14, 10, 9, 14, 11, 9, 14, 12, 9, 14, 13, 8, 14, 12, 8, 14, 11, 8, 14, 10, 8, 14, 9, 8, 14, 8, 8, 14, 7, 8, 14, 6, 8, 14, 5, 8, 14, 4, 8, 14, 3, 8, 14, 2, 8, 14, 7, 10, 14, 6, 10, 14, 6, 11, 14, 7, 11, 14, 8, 11, 14, 9, 11, 14, 10, 11, 14, 11, 11, 14, 11, 10, 14, 10, 10, 14, 9, 10, 14, 8, 10, 14, 13, 9, 14, 13, 7, 14, 13, 6, 14, 12, 6, 14, 12, 5, 14, 12, 4, 14, 12, 3, 14, 12, 2, 14, 13, 2, 14, 14, 2, 14, 15, 2, 14, 15, 3, 14, 15, 4, 14, 15, 5, 14, 14, 6, 14, 14, 7, 14, 15, 6, 14, 15, 7, 14, 12, 7, 14, 13, 5, 14, 13, 4, 14, 13, 3, 14, 14, 3, 14, 14, 4, 14, 14, 5, 14, 11, 5, 14, 10, 5, 14, 10, 4, 14, 10, 3, 14, 10, 2, 14, 11, 2, 14, 11, 3, 14, 11, 4, 14, 9, 2, 14, 8, 2, 14, 7, 2, 14, 6, 2, 14, 5, 2, 14, 4, 2, 14, 3, 2, 14, 2, 2, 14, 1, 2, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 1, 5, 14, 2, 5, 14, 3, 5, 14, 4, 5, 14, 5, 5, 14, 6, 5, 14, 7, 5, 14, 7, 4, 14, 7, 3, 14, 6, 3, 14, 5, 3, 14, 4, 3, 14, 3, 3, 14, 2, 3, 14, 1, 3, 14, 1, 4, 14, 2, 4, 14, 3, 4, 14, 4, 4, 14, 5, 4, 14, 6, 4, 14, 8, 3, 14, 9, 3, 14, 65534, 0, 14, 65534, 1, 14, 65534, 2, 14, 65534, 3, 14, 65535, 3, 14, 0, 1, 14, 0, 0, 14, 1, 0, 14, 1, 1, 14, 65535, 1, 14, 65535, 0, 14, 65535, 2, 14, 2, 65524, 14, 3, 65524, 14, 4, 65524, 14, 5, 65524, 14, 6, 65524, 14, 7, 65524, 14, 8, 65524, 14, 9, 65524, 14, 10, 65524, 14, 11, 65524, 14, 11, 65525, 14, 11, 65526, 14, 12, 65526, 14, 13, 65526, 14, 13, 65527, 14, 13, 65528, 14, 14, 65528, 14, 15, 65528, 14, 15, 65529, 14, 15, 65530, 14, 15, 65531, 14, 15, 65532, 14, 15, 65533, 14, 14, 65533, 14, 13, 65533, 14, 12, 65533, 14, 11, 65533, 14, 10, 65533, 14, 9, 65533, 14, 9, 65534, 14, 9, 65535, 14, 9, 0, 14, 9, 1, 14, 6, 1, 14, 5, 1, 14, 4, 1, 14, 4, 0, 14, 4, 65535, 14, 4, 65534, 14, 4, 65533, 14, 4, 65532, 14, 5, 65532, 14, 6, 65532, 14, 7, 65532, 14, 8, 65532, 14, 8, 65533, 14, 8, 65534, 14, 8, 65535, 14, 8, 0, 14, 8, 1, 14, 7, 1, 14, 7, 0, 14, 7, 65535, 14, 7, 65534, 14, 7, 65533, 14, 6, 65533, 14, 5, 65533, 14, 5, 65534, 14, 5, 65535, 14, 5, 0, 14, 6, 0, 14, 6, 65535, 14, 6, 65534, 14, 3, 65535, 14, 2, 65535, 14, 2, 65534, 14, 2, 65533, 14, 2, 65532, 14, 2, 65531, 14, 2, 65530, 14, 2, 65529, 14, 2, 65528, 14, 2, 65527, 14, 2, 65526, 14, 2, 65525, 14, 3, 65525, 14, 3, 65526, 14, 3, 65527, 14, 3, 65528, 14, 3, 65529, 14, 3, 65530, 14, 3, 65531, 14, 3, 65532, 14, 3, 65533, 14, 3, 65534, 14, 4, 65525, 14, 5, 65525, 14, 6, 65525, 14, 7, 65525, 14, 8, 65525, 14, 9, 65525, 14, 10, 65525, 14, 10, 65526, 14, 10, 65527, 14, 11, 65527, 14, 12, 65527, 14, 12, 65528, 14, 12, 65529, 14, 13, 65529, 14, 14, 65529, 14, 14, 65530, 14, 14, 65531, 14, 14, 65532, 14, 13, 65532, 14, 12, 65532, 14, 11, 65532, 14, 10, 65532, 14, 9, 65532, 14, 10, 65531, 14, 11, 65531, 14, 11, 65530, 14, 10, 65530, 14, 9, 65530, 14, 8, 65531, 14, 7, 65531, 14, 7, 65530, 14, 6, 65530, 14, 6, 65531, 14, 7, 65529, 14, 7, 65528, 14, 7, 65527, 14, 7, 65526, 14, 8, 65526, 14, 9, 65526, 14, 9, 65527, 14, 9, 65528, 14, 9, 65529, 14, 9, 65531, 14, 8, 65530, 14, 8, 65529, 14, 8, 65528, 14, 8, 65527, 14, 6, 65526, 14, 6, 65527, 14, 6, 65528, 14, 6, 65529, 14, 5, 65529, 14, 4, 65529, 14, 4, 65528, 14, 5, 65528, 14, 3, 6, 14, 2, 6, 14, 2, 7, 14, 3, 7, 14, 7, 7, 14, 8, 7, 14, 9, 7, 14, 9, 6, 14, 8, 6, 14, 7, 6, 14, 6, 6, 14, 6, 7, 14, 2621445, 6, 15, 2621444, 6, 15, 2621444, 7, 15, 2621445, 7, 15, 2686969, 8, 15, 2686968, 8, 15, 2686968, 9, 15, 2686969, 9, 15, 2686964, 65530, 15, 2686964, 65531, 15, 2686965, 65531, 15, 2686965, 65530, 15, 2686969, 65530, 15, 2686969, 65531, 15, 2686968, 65530, 15, 2686968, 65531, 15, 2621445, 65526, 15, 2621444, 65526, 15, 2621444, 65527, 15, 2621445, 65527, 15, 2621444, 65530, 15, 2621444, 65531, 15, 2621445, 65531, 15, 2621445, 65530, 15, 2621443, 0, 15, 2621442, 0, 15, 2621442, 1, 15, 2621443, 1, 15, 2686974, 4, 15, 2686974, 5, 15, 2686975, 5, 15, 2686975, 4, 15, 2621449, 4, 15, 2621448, 4, 15, 2621448, 5, 15, 2621449, 5, 15, 2621451, 6, 15, 2621451, 7, 15, 2621450, 7, 15, 2621450, 6, 15, 2621451, 65534, 15, 2621451, 65535, 15, 2621451, 0, 15, 2621451, 1, 15, 2621450, 1, 15, 2621450, 0, 15, 2621450, 65535, 15, 2621450, 65534, 15, 2621453, 65530, 15, 2621452, 65530, 15, 2621452, 65531, 15, 2621453, 65531, 15, 2621451, 65528, 15, 2621450, 65528, 15, 2621450, 65529, 15, 2621451, 65529, 15, 65519, 65528, 1048656, 65519, 65529, 1048656, 65519, 65530, 1048656, 65519, 65531, 1048656, 65519, 65532, 1048656, 65519, 65533, 1048656, 65519, 0, 1048656, 65519, 1, 1048656, 65519, 2, 1048656, 65519, 3, 1048656, 65525, 7, 1048656, 65525, 8, 1048656, 65525, 9, 1048656, 5, 11, 1048656, 65533, 1, 1048656, 65533, 2, 1048656, 65535, 65526, 1048656, 1, 65524, 1048656, 65523, 65524, 1048656, 65521, 65526, 1048656, 12, 65524, 1441872, 14, 65526, 1441872, 16, 65528, 1441872, 16, 65529, 1441872, 16, 65530, 1441872, 16, 65531, 1441872, 16, 65532, 1441872, 16, 65533, 1441872, 12, 65535, 1048577, 12, 0, 1048577, 16, 3, 1441872, 16, 4, 1441872, 16, 5, 1441872, 16, 6, 1441872, 14, 9, 1441872, 12, 11, 1441872, 2, 11, 1441872, 65530, 1, 1441872, 65530, 2, 1441872, 65528, 65526, 1441872, 65528, 65527, 1441865, 65523, 65525, 73, 65521, 65527, 73, 65533, 0, 1048649, 65533, 3, 73, 65530, 3, 1441865, 65531, 65534, 1048649, 12, 1, 1048577, 12, 65534, 1048577, 14, 65527, 1441865, 12, 65525, 1441865, 14, 8, 655433, 12, 10, 655433, 2, 10, 655433, 5, 10, 1048649, 65527, 10, 1048649, 65525, 6, 1048649, 65521, 4, 1048649, 65521, 65525, 1441866, 65519, 65527, 1441866, 65528, 65525, 655434, 65523, 65523, 1441866, 1, 65523, 1441866, 65535, 65525, 1441866, 12, 65523, 655434, 14, 65525, 655434, 16, 65527, 655434, 16, 65534, 1048650, 16, 1, 655434, 16, 8, 1048650, 14, 10, 1048650, 12, 12, 1048650, 5, 12, 74, 2, 12, 1048650, 65527, 12, 74, 65525, 10, 74, 65521, 6, 74, 65519, 4, 74, 65519, 65535, 1441866, 65519, 65534, 74, 65531, 0, 74, 65532, 0, 655440, 65532, 3, 80, 65531, 3, 80, 65530, 65534, 655440, 65529, 65534, 655440, 65528, 65534, 655440, 65527, 65534, 655440, 65526, 65534, 655440, 65525, 65534, 655440, 65524, 65534, 655440, 65523, 65534, 655440, 65522, 65534, 655440, 65521, 65534, 655440, 65520, 65534, 655440, 65520, 65535, 80, 65521, 65535, 80, 65522, 65535, 80, 65523, 65535, 80, 65524, 65535, 80, 65525, 65535, 80, 65526, 65535, 80, 65527, 65535, 80, 65528, 65535, 80, 65529, 65535, 80, 65531, 65535, 1048656, 65520, 4, 655440, 65522, 6, 655440, 65523, 6, 655440, 65524, 6, 655440, 65521, 5, 1048656, 65526, 10, 655440, 65527, 11, 1048656, 65528, 12, 655440, 65529, 12, 655440, 65530, 12, 655440, 65531, 12, 655440, 65532, 12, 655440, 65533, 12, 655440, 65534, 12, 655440, 65535, 12, 655440, 0, 12, 655440, 1, 12, 655440, 3, 10, 655440, 4, 10, 655440, 6, 12, 655440, 7, 12, 655440, 8, 12, 655440, 9, 12, 655440, 10, 12, 655440, 11, 12, 655440, 13, 10, 655440, 15, 8, 655440, 16, 7, 1441872, 13, 1, 80, 14, 1, 80, 15, 1, 80, 16, 2, 1441872, 13, 65534, 655440, 14, 65534, 655440, 15, 65534, 655440, 15, 65527, 80, 13, 65525, 80, 11, 65523, 80, 10, 65523, 80, 9, 65523, 80, 8, 65523, 80, 7, 65523, 80, 6, 65523, 80, 5, 65523, 80, 4, 65523, 80, 3, 65523, 80, 2, 65523, 80, 0, 65525, 80, 65534, 65527, 80, 65533, 65527, 80, 65532, 65527, 80, 65531, 65527, 80, 65530, 65527, 80, 65529, 65527, 80, 65527, 65525, 80, 65524, 65523, 80, 65525, 65523, 80, 65526, 65524, 1441872, 65522, 65525, 80, 65520, 65527, 80, 1, 65525, 73, 65535, 65527, 73, 65526, 65525, 1441865, 65526, 65523, 655434, 65530, 65535, 655434, 65530, 0, 1441872, 13, 65535, 1441870, 13, 0, 1441870, 14, 0, 1441870, 15, 0, 1441870, 16, 0, 1441870, 17, 0, 1441870, 17, 65535, 1441870, 16, 65535, 1441870, 15, 65535, 1441870, 14, 65535, 1441870, 65531, 1, 1441870, 65531, 2, 1441870, 65532, 2, 1441870, 65532, 1, 1441870, 65518, 65526, 1441870, 65518, 65527, 1441870, 65518, 65528, 1441870, 65518, 65529, 1441870, 65518, 65530, 1441870, 65518, 65531, 1441870, 65518, 65532, 1441870, 65518, 65533, 1441870, 65518, 65534, 1441870, 65518, 65535, 1441870, 65518, 0, 1441870, 65518, 1, 1441870, 65518, 2, 1441870, 65518, 3, 1441870, 65518, 4, 1441870, 65518, 65523, 1441870, 65518, 65522, 1441870, 65518, 65524, 1441870, 65518, 65525, 1441870, 65519, 65525, 1441870, 65519, 65526, 1441870, 65520, 65526, 1441870, 65520, 65525, 1441870, 65520, 65524, 1441870, 65520, 65523, 1441870, 65519, 65523, 1441870, 65519, 65522, 1441870, 65521, 65523, 1441870, 65522, 65523, 1441870, 65522, 65524, 1441870, 65521, 65524, 1441870, 65519, 65524, 1441870, 65520, 65522, 1441870, 65521, 65522, 1441870, 65522, 65522, 1441870, 65523, 65522, 1441870, 65524, 65522, 1441870, 65525, 65522, 1441870, 65526, 65522, 1441870, 65527, 65522, 1441870, 65528, 65522, 1441870, 65529, 65522, 1441870, 65530, 65522, 1441870, 65531, 65522, 1441870, 65532, 65522, 1441870, 65533, 65522, 1441870, 65534, 65522, 1441870, 65535, 65522, 1441870, 0, 65522, 1441870, 0, 65523, 1441870, 65535, 65523, 1441870, 65535, 65524, 1441870, 65534, 65524, 1441870, 65534, 65525, 1441870, 65533, 65525, 1441870, 65533, 65526, 1441870, 65534, 65526, 1441870, 65532, 65526, 1441870, 65531, 65526, 1441870, 65530, 65526, 1441870, 65529, 65526, 1441870, 65529, 65525, 1441870, 65529, 65524, 1441870, 65528, 65524, 1441870, 65527, 65524, 1441870, 65527, 65523, 1441870, 65528, 65523, 1441870, 65529, 65523, 1441870, 65530, 65523, 1441870, 65531, 65523, 1441870, 65532, 65523, 1441870, 65533, 65523, 1441870, 65534, 65523, 1441870, 65533, 65524, 1441870, 65532, 65524, 1441870, 65532, 65525, 1441870, 65531, 65525, 1441870, 65530, 65525, 1441870, 65530, 65524, 1441870, 65531, 65524, 1441870, 0, 65524, 1441870, 1, 65522, 1441870, 2, 65522, 1441870, 3, 65522, 1441870, 4, 65522, 1441870, 5, 65522, 1441870, 6, 65522, 1441870, 7, 65522, 1441870, 8, 65522, 1441870, 9, 65522, 1441870, 10, 65522, 1441870, 11, 65522, 1441870, 12, 65522, 1441870, 13, 65522, 1441870, 14, 65522, 1441870, 15, 65522, 1441870, 16, 65522, 1441870, 17, 65522, 1441870, 13, 65523, 1441870, 13, 65524, 1441870, 14, 65524, 1441870, 15, 65524, 1441870, 15, 65523, 1441870, 16, 65523, 1441870, 17, 65523, 1441870, 14, 65523, 1441870, 17, 65524, 1441870, 17, 65525, 1441870, 17, 65526, 1441870, 16, 65525, 1441870, 16, 65526, 1441870, 15, 65526, 1441870, 15, 65525, 1441870, 16, 65524, 1441870, 17, 65527, 1441870, 17, 65528, 1441870, 17, 65529, 1441870, 17, 65530, 1441870, 17, 65531, 1441870, 17, 65532, 1441870, 17, 65533, 1441870, 17, 65534, 1441870, 17, 1, 1441870, 17, 2, 1441870, 17, 3, 1441870, 3, 11, 1441870, 3, 12, 1441870, 3, 13, 1441870, 4, 13, 1441870, 4, 12, 1441870, 4, 11, 1441870, 5, 13, 1441870, 6, 13, 1441870, 7, 13, 1441870, 8, 13, 1441870, 9, 13, 1441870, 10, 13, 1441870, 11, 13, 1441870, 12, 13, 1441870, 13, 13, 1441870, 14, 13, 1441870, 15, 13, 1441870, 16, 13, 1441870, 17, 13, 1441870, 17, 12, 1441870, 17, 11, 1441870, 17, 10, 1441870, 17, 9, 1441870, 17, 8, 1441870, 17, 7, 1441870, 17, 6, 1441870, 17, 5, 1441870, 17, 4, 1441870, 15, 9, 1441870, 15, 10, 1441870, 15, 11, 1441870, 15, 12, 1441870, 16, 12, 1441870, 16, 11, 1441870, 16, 10, 1441870, 16, 9, 1441870, 14, 11, 1441870, 13, 12, 1441870, 13, 11, 1441870, 14, 12, 1441870, 2, 13, 1441870, 1, 13, 1441870, 0, 13, 1441870, 65535, 13, 1441870, 65534, 13, 1441870, 65533, 13, 1441870, 65532, 13, 1441870, 65531, 13, 1441870, 65530, 13, 1441870, 65518, 5, 1441870, 65518, 6, 1441870, 65518, 7, 1441870, 65518, 8, 1441870, 65518, 9, 1441870, 65518, 10, 1441870, 65518, 11, 1441870, 65519, 11, 1441870, 65519, 12, 1441870, 65519, 13, 1441870, 65518, 13, 1441870, 65518, 12, 1441870, 65520, 13, 1441870, 65521, 13, 1441870, 65522, 13, 1441870, 65523, 13, 1441870, 65524, 13, 1441870, 65525, 13, 1441870, 65526, 13, 1441870, 65527, 13, 1441870, 65528, 13, 1441870, 65529, 13, 1441870, 65526, 12, 1441870, 65526, 11, 1441870, 65525, 11, 1441870, 65524, 12, 1441870, 65523, 12, 1441870, 65525, 12, 1441870, 65522, 12, 1441870, 65521, 12, 1441870, 65520, 12, 1441870, 65519, 10, 1441870, 65519, 9, 1441870, 65519, 5, 1441870, 65519, 6, 1441870, 65519, 7, 1441870, 65519, 8, 1441870, 65520, 7, 1441870, 65520, 6, 1441870, 65520, 5, 1441870, 65520, 8, 1441870, 65520, 9, 1441870, 65520, 10, 1441870, 65520, 11, 1441870, 65521, 11, 1441870, 65522, 11, 1441870, 65523, 11, 1441870, 65524, 11, 1441870, 65524, 10, 1441870, 65524, 9, 1441870, 65524, 8, 1441870, 65524, 7, 1441870, 65523, 7, 1441870, 65522, 7, 1441870, 65521, 7, 1441870, 65521, 8, 1441870, 65521, 9, 1441870, 65521, 10, 1441870, 65522, 10, 1441870, 65523, 10, 1441870, 65523, 9, 1441870, 65523, 8, 1441870, 65522, 8, 1441870, 65522, 9, 1441870, 5308404, 65530, 1441836, 5308405, 65530, 655404, 5308404, 65531, 44, 5308405, 65531, 1048620, 5308409, 65531, 1048620, 5308408, 65530, 1441836, 5308409, 65530, 655404, 5308408, 65531, 44, 5242884, 65526, 1441836, 5242885, 65526, 655404, 5242885, 65527, 1048620, 5242884, 65527, 44, 5242891, 65528, 655404, 5242890, 65528, 1441836, 5242891, 65529, 1048620, 5242890, 65529, 44, 5242884, 65530, 1441836, 5242885, 65530, 655404, 5242885, 65531, 1048620, 5242884, 65531, 44, 5242893, 65530, 655404, 5242892, 65530, 1441836, 5242892, 65531, 44, 5242893, 65531, 1048620, 5242883, 1, 1048620, 5242882, 0, 1441836, 5242883, 0, 655404, 5242882, 1, 44, 5308414, 4, 1441836, 5308415, 4, 655404, 5308415, 5, 1048620, 5308414, 5, 44, 5242884, 7, 44, 5242884, 6, 1441836, 5242885, 6, 655404, 5242885, 7, 1048620, 5242888, 4, 1441836, 5242888, 5, 44, 5242889, 4, 655404, 5242889, 5, 1048620, 5242890, 1, 44, 5242891, 1, 1048620, 5242890, 65534, 1441836, 5242891, 65534, 655404, 5242890, 0, 1441838, 5242890, 65535, 1441838, 5242891, 0, 1048622, 5242891, 65535, 1048622, 5242890, 7, 44, 5242890, 6, 1441836, 5242891, 6, 655404, 5242891, 7, 1048620, 5308408, 8, 1441836, 5308409, 8, 655404, 5308409, 9, 1048620, 5308408, 9, 44, 2621452, 1, 1048615, 2621452, 0, 1048615, 2621452, 65535, 1048615, 2621452, 65534, 1048615)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="BridgeCenterWood" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0.179043, 0.983841, -7.8262e-09, 0.983841, -0.179043, -4.30051e-08, -13.7258, 1, -1.90965)
+mesh = ExtResource("6_xg4la")
+
+[node name="BridgeCenterWood2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.7258, 1.09082, -0.965136)
+mesh = ExtResource("6_xg4la")
+
+[node name="BridgeCenterWood3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.00105218, -8.8225e-05, -0.999999, -0.189158, 0.981947, -0.00028567, 0.981946, 0.189158, 0.00101649, -13.7258, 1, -0.038882)
+mesh = ExtResource("6_xg4la")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96002, 0, 1.91114)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9001, 0, 0.0901644)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1085, 0, -3.85529)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1518, 0, -7.71402)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0274, 0, -9.96857)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1197, 0, -12.093)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52948, 0, -14.1742)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.84417, 0, -14.0874)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0287857, 0, -11.9196)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96562, 0, -10.0119)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12785, 0, -10.0553)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12785, 0, -12.0553)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1279, 0, -14.0553)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0761, 0, -12.0609)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0272, 0, -9.84969)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0272, 0, -5.84969)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1139, 0, -1.81753)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2873, 0, 2.04121)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1195, 0, 5.98666)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0006, 0, 8.02442)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0929, 0, 12.0132)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1908, 0, 14.051)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07192, 0, 14.0076)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17702, 0, 14.2244)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08472, 0, 12.0132)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.07352, 0, 14.051)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1924, 0, 13.9209)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9267, 0, 12.0566)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1378, 0, 10.0188)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3057, 0, 6.5503)
+shape = SubResource("BoxShape3D_31rm5")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0455, 0, 3.2552)
+shape = SubResource("BoxShape3D_31rm5")

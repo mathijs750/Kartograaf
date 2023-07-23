@@ -14,6 +14,8 @@ script = ExtResource("1_wf3wi")
 
 [node name="Player" parent="." instance=ExtResource("1_b6m7t")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 12.6748, 1.70325, -2.92734)
+gravity_multiplier = 1.0
+speed = 10
 acceleration = 5
 deceleration = 5
 jump_height = 3
@@ -32,7 +34,6 @@ visible = false
 [node name="Island" parent="." instance=ExtResource("3_g8gt0")]
 
 [node name="StartScreen" parent="." instance=ExtResource("7_76v41")]
-visible = false
 
 [node name="watercraftPack_007" parent="." instance=ExtResource("8_1o7x0")]
 transform = Transform3D(-3.59263e-08, 0, -0.821899, 0, 0.821899, 0, 0.821899, 0, -3.59263e-08, 17.6721, -0.564705, -0.045444)
