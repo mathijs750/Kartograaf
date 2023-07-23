@@ -4,7 +4,7 @@ on: push
 env:
   GODOT_VERSION: 4.1
   EXPORT_NAME: kartograaf
-  PROJECT_PATH: kartograaf
+  PROJECT_PATH: /
   
 jobs:
   export-windows:
