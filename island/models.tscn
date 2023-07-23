@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=3 uid="uid://23rtj7ckgmyy"]
+[gd_scene load_steps=173 format=3 uid="uid://23rtj7ckgmyy"]
 
 [ext_resource type="ArrayMesh" uid="uid://cksvp2clq3ku5" path="res://island/models/cliff_blockCave_rock.obj" id="1_tytia"]
 [ext_resource type="ArrayMesh" uid="uid://c4gv7qym7ioya" path="res://island/models/cliff_blockCave_stone.obj" id="2_1bvik"]
@@ -60,7 +60,9 @@
 [ext_resource type="ArrayMesh" uid="uid://dlmhveb81v7wa" path="res://island/models/ground_pathBend.obj" id="58_tq8vh"]
 [ext_resource type="ArrayMesh" uid="uid://dweie62r3dnxn" path="res://island/models/ground_pathBendBank.obj" id="59_d3077"]
 [ext_resource type="ArrayMesh" uid="uid://br1pt362g77h4" path="res://island/models/ground_pathCorner.obj" id="60_i8qvh"]
+[ext_resource type="Material" uid="uid://c80idpwbt5t0i" path="res://island/models/Dirt.tres" id="61_2vxnc"]
 [ext_resource type="ArrayMesh" uid="uid://ceeo6q016cqxq" path="res://island/models/ground_pathCornerSmall.obj" id="61_vjj3r"]
+[ext_resource type="Material" uid="uid://gvytcttploc2" path="res://island/models/DirtDark.tres" id="62_5w2h8"]
 [ext_resource type="ArrayMesh" uid="uid://bfm2gxnci8qhc" path="res://island/models/ground_pathCross.obj" id="62_8n3ay"]
 [ext_resource type="ArrayMesh" uid="uid://c1yh4yyrlk15y" path="res://island/models/ground_pathEnd.obj" id="63_h50k5"]
 [ext_resource type="ArrayMesh" uid="uid://3fdmqvu5k1pd" path="res://island/models/ground_pathEndClosed.obj" id="64_0tixw"]
@@ -882,6 +884,18 @@ mesh = ExtResource("60_i8qvh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathCorner/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xhvfj")
 
+[node name="GroundPathCorner2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -12)
+mesh = ExtResource("60_i8qvh")
+surface_material_override/0 = ExtResource("61_2vxnc")
+surface_material_override/1 = ExtResource("62_5w2h8")
+surface_material_override/2 = ExtResource("61_2vxnc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GroundPathCorner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathCorner2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xhvfj")
+
 [node name="GroundPathCornerSmall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -8)
 mesh = ExtResource("61_vjj3r")
@@ -889,6 +903,18 @@ mesh = ExtResource("61_vjj3r")
 [node name="StaticBody3D" type="StaticBody3D" parent="GroundPathCornerSmall"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathCornerSmall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hdkl7")
+
+[node name="GroundPathCornerSmall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -12)
+mesh = ExtResource("61_vjj3r")
+surface_material_override/0 = ExtResource("61_2vxnc")
+surface_material_override/1 = ExtResource("62_5w2h8")
+surface_material_override/2 = ExtResource("61_2vxnc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GroundPathCornerSmall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathCornerSmall2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hdkl7")
 
 [node name="GroundPathCross" type="MeshInstance3D" parent="."]
@@ -943,6 +969,18 @@ mesh = ExtResource("67_njlqj")
 [node name="StaticBody3D" type="StaticBody3D" parent="GroundPathSide"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathSide/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7jety")
+
+[node name="GroundPathSide2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -12)
+mesh = ExtResource("67_njlqj")
+surface_material_override/0 = ExtResource("61_2vxnc")
+surface_material_override/1 = ExtResource("62_5w2h8")
+surface_material_override/2 = ExtResource("61_2vxnc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GroundPathSide2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPathSide2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7jety")
 
 [node name="GroundPathSideOpen" type="MeshInstance3D" parent="."]
